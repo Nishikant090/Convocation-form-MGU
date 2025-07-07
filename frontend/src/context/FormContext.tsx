@@ -1,4 +1,4 @@
-import React, {  createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import Header from '../components/Header';
 
@@ -104,8 +104,6 @@ export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 const AppContent: React.FC = () => {
   const { data, setData } = useForm();
-
-
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

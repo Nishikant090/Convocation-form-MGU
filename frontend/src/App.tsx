@@ -1,5 +1,7 @@
-import { useReactToPrint } from 'react-to-print';
 import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+import { useFormLogic } from './hooks/useFormLogic';
+import FormButtons from './components/FormButtons';
 
 import Header from './components/Header';
 import PersonalDetails from './components/PersonalDetails';
@@ -8,18 +10,16 @@ import Program from './components/Program';
 import ExamDetails from './components/ExamDetails';
 import FileUploads from './components/FileUploads';
 import DegreeMode from './components/DegreeMode';
-import FormButtons from './components/FormButtons';
-import { useFormLogic } from './hooks/useFormLogic';
 import { formContainerStyle, mainContainerStyle } from './styles/formStyles';
 
 function App() {
   const formRef = useRef<HTMLDivElement>(null);
   const { data, handleChange, handleExamFiles, handleExamChange, handleFile, handleDegreeMode, handleSubmit } = useFormLogic();
-
   const handlePrint = useReactToPrint({
-    content: () => formRef.current,
+    contentRef: formRef,
   });
 
+  
   return (
     <div style={mainContainerStyle}>
       <Header />
