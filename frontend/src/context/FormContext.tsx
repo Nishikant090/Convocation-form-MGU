@@ -227,7 +227,7 @@ const AppContent: React.FC = () => {
   }}
 >
 
-        <h4 className="mb-3" style={{ color: 'black', fontWeight: 700 }}>
+        <h4 style={{ color: '#111', fontWeight: 800, marginBottom: 2 }}>
           Convocation Form
         </h4>
 

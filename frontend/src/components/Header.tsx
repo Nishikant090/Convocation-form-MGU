@@ -8,11 +8,13 @@ return (
       
 
       <div style={{ height: 4, background: 'linear-gradient(90deg, #FF5722, #ff8a50)', borderRadius: 2, margin: '0 auto 16px auto', width: '60%' }}></div>
-      <p style={{ fontSize: '14px', lineHeight: '1.4', color: 'red', fontWeight: 500 }}>
+      <p style={{ fontSize: '14px', lineHeight: '1.4', color: 'black', fontWeight: 500 }}>
         Mahatma Gandhi University, Meghalaya<br />
         13th Mile, G S Road, PO & OP – Byrnihat, District – Ri-Bhoi, Meghalaya<br />
         Approved by Gov. of Meghalaya, Recognized by UGC, PCI, BCI, Member of AIU
       </p>
+      <br></br>
+      <h3>CONVOCATION FORM </h3>
     </div>
   );
 
