@@ -1,0 +1,125 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+body {
+  background: #f57a33;
+  color: #f39e6d;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333;
+  font-weight: 700;
+}
+
+/* Card style for form sections */
+.form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(255, 87, 34, 0.08);
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+.form-card:hover {
+  box-shadow: 0 8px 32px rgba(255, 87, 34, 0.16);
+}
+
+label {
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #ffffff;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #333333;
+  outline: none;
+  box-shadow: 0 0 0 2px #cccccc;
+}
+
+button, .btn {
+  background: #333333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
+}
+button:hover, .btn:hover {
+  background: #555555;
+  box-shadow: 0 4px 16px rgba(51, 51, 51, 0.16);
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: #666666;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+input[type="file"]:hover::-webkit-file-upload-button {
+  background: #888888;
+}
+
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #333333, #cccccc);
+  border-radius: 2px;
+  margin: 2rem 0 1.5rem 0;
+  width: 100%;
+}
+
+.avatar-preview {
+  border-radius: 50%;
+  border: 3px solid #333333;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.12);
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  background: #666666;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.3em 0.8em;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 1rem 0.5rem;
+  }
+  .row {
+    flex-direction: column !important;
+  }
+  .col-md-6, .col-md-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
