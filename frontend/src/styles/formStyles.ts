@@ -43,7 +43,7 @@ export const mainContainerStyle: CSSProperties = {
   background: '#f39e6d',
   padding: '1rem',
   display: 'flex',
-  flexDirection: 'column' as const,
-  alignItems: 'center' as const,
+  flexDirection: 'column',
+  alignItems: 'center',
   fontFamily: 'Poppins, Arial, sans-serif',
 };

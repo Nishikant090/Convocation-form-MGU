@@ -17,8 +17,7 @@ function App() {
   const { data, handleChange, handleExamFiles, handleExamChange, handleFile, handleDegreeMode, handleSubmit } = useFormLogic();
 
   const handlePrint = useReactToPrint({
-    contentRef: formRef,
-   
+    content: () => formRef.current,
   });
 
   return (
