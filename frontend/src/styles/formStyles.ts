@@ -35,13 +35,15 @@ export const formContainerStyle = {
   color: '#333333',
 };
 
-export const mainContainerStyle = {
+import type { CSSProperties } from 'react';
+
+export const mainContainerStyle: CSSProperties = {
   minHeight: '100vh',
   width: '100vw',
   background: '#f39e6d',
   padding: '1rem',
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+  flexDirection: 'column' as const,
+  alignItems: 'center' as const,
   fontFamily: 'Poppins, Arial, sans-serif',
-}; 
+};

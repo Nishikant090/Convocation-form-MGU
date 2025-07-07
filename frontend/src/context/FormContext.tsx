@@ -1,7 +1,6 @@
-import React, { useRef, createContext, useContext, useState } from 'react';
+import React, {  createContext, useContext, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import Header from '../components/Header';
-import { useReactToPrint } from 'react-to-print';
 
 const API_URL = 'http://localhost/alumni/backend/submit.php';
 
@@ -105,12 +104,8 @@ export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 const AppContent: React.FC = () => {
   const { data, setData } = useForm();
-  const formRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = useReactToPrint({
-    content: () => formRef.current,
-    documentTitle: 'Convocation-Form',
-  });
+
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -583,7 +578,7 @@ const AppContent: React.FC = () => {
           <button
             className="btn"
             style={{ minWidth: 180, fontSize: '1.1em', marginRight: 16 }}
-            onClick={handlePrint}
+            
           >
             Download / Print
           </button>

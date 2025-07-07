@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import { useRef } from 'react';
+
 import Header from './components/Header';
 import PersonalDetails from './components/PersonalDetails';
 import AddressSection from './components/AddressSection';

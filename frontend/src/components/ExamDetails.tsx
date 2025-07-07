@@ -1,5 +1,4 @@
 import React from 'react';
-import type { ChangeEvent } from 'react';
 import type { ExamDetail } from '../types/form';
 import { inputStyle } from '../styles/formStyles';
 
