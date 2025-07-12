@@ -13,7 +13,6 @@ return (
         13th Mile, G S Road, PO & OP – Byrnihat, District – Ri-Bhoi, Meghalaya<br />
         Approved by Gov. of Meghalaya, Recognized by UGC, PCI, BCI, Member of AIU
       </p>
-      <br></br>
       <h3>CONVOCATION FORM </h3>
     </div>
   );

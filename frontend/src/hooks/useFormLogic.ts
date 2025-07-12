@@ -69,12 +69,14 @@ export const useFormLogic = () => {
 
   const handleSubmit = async () => {
     const formData = new FormData();
+
+    // Basic & address fields
     formData.append('enrollmentNumber', data.enrollmentNumber ?? '');
     formData.append('studentName', data.studentName ?? '');
     formData.append('studentNameHindi', data.studentNameHindi ?? '');
     formData.append('fatherName', data.fatherName ?? '');
     formData.append('email', data.email ?? '');
-    formData.append('contactNo', data.contactNo ?? '');
+    formData.append('contactNumber', data.contactNo ?? '');
     formData.append('alumniToken', data.alumniToken ?? '');
     formData.append('currentState', data.currentState ?? '');
     formData.append('currentDistrict', data.currentDistrict ?? '');
@@ -86,35 +88,36 @@ export const useFormLogic = () => {
     formData.append('permanentAddress', data.permanentAddress ?? '');
     formData.append('program', data.program ?? '');
     formData.append('degreeMode', data.degreeMode ?? '');
-    
+
+    // Exam Details
     data.examDetails.forEach((exam, idx) => {
-      formData.append(`examDetails[${idx}][exam]`, exam.exam);
-      formData.append(`examDetails[${idx}][board]`, exam.board);
-      formData.append(`examDetails[${idx}][percentage]`, exam.percentage);
-      formData.append(`examDetails[${idx}][division]`, exam.division);
-      formData.append(`examDetails[${idx}][yearOfPassing]`, exam.yearOfPassing);
-      if (exam.marksheetFiles && exam.marksheetFiles.length > 0) {
-        exam.marksheetFiles.forEach((file, fileIdx) => {
-          formData.append(`examDetails[${idx}][marksheet${fileIdx+1}]`, file);
-        });
+      const index = idx + 1;
+      formData.append(`exam${index}`, exam.exam ?? '');
+      formData.append(`board${index}`, exam.board ?? '');
+      formData.append(`percentage${index}`, exam.percentage ?? '');
+      formData.append(`division${index}`, exam.division ?? '');
+      formData.append(`yearOfPassing${index}`, exam.yearOfPassing ?? '');
+      if (exam.marksheetFiles?.[0]) {
+        formData.append(`marksheet${index}`, exam.marksheetFiles[0]);
       }
     });
-    
-    if (data.idProofFile) formData.append('idProof', data.idProofFile);
-    if (data.passportPhotoFile) formData.append('passportPhoto', data.passportPhotoFile);
-    if (data.signatureFile) formData.append('signature', data.signatureFile);
-    if (data.paymentScreenshotFile) formData.append('paymentScreenshot', data.paymentScreenshotFile);
-    
+
+    // Files
+    if (data.idProofFile) formData.append('idProofFile', data.idProofFile);
+    if (data.passportPhotoFile) formData.append('passportPhotoFile', data.passportPhotoFile);
+    if (data.signatureFile) formData.append('signatureFile', data.signatureFile);
+    if (data.paymentScreenshotFile) formData.append('paymentScreenshotFile', data.paymentScreenshotFile);
+
     try {
       const res = await fetch(API_URL, {
         method: 'POST',
         body: formData,
       });
-      const result = await res.json();
-      if (result.success) {
+      const result = await res.text();
+      if (result.toLowerCase().includes('success')) {
         alert('✅ Form submitted successfully!');
       } else {
-        alert('❌ Submission failed: ' + (result.message || ''));
+        alert('❌ Submission failed:\n' + result);
       }
     } catch (err) {
       console.error(err);
@@ -131,4 +134,4 @@ export const useFormLogic = () => {
     handleDegreeMode,
     handleSubmit,
   };
-}; 
+};

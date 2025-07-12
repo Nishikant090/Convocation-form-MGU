@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import Header from '../components/Header';
 
-const API_URL = 'http://localhost/alumni/backend/submit.php';
+const API_URL = 'http://localhost:5000/api/submit';
 
 const states = ['Uttar Pradesh', 'Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'Other'];
 const districts = ['Lucknow', 'Kanpur', 'Varanasi', 'Agra', 'Other'];

@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost/alumni/backend/submit.php';
+export const API_URL = 'http://localhost:5000/api/submit';
 
 export const states = ['Uttar Pradesh', 'Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'Other'];
 export const districts = ['Lucknow', 'Kanpur', 'Varanasi', 'Agra', 'Other'];
